@@ -111,3 +111,8 @@ body.is-loading #main {
 #main label {
   text-align: left;
 }
+
+.about-videos h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
