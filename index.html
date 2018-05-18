@@ -15,6 +15,9 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
 		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+
 	</head>
 	<body>
 
@@ -61,16 +64,26 @@
 									<span class="image"><img src="images/about-blur.jpg" alt="" /></span>
 								</div>
 								<div class="about-videos">
-									<h3>Adding tickets</h3>
-									<video width="100%" controls>
-										<source src="videos/adding-removing-from-ui.mp4" type="video/mp4">
-										Your browser does not support the video tag.
-									</video>
-									<h3>Follow sprint</h3>
-									<video width="100%" controls>
-										<source src="videos/follow-unfollow-from-ui.mp4" type="video/mp4">
-										Your browser does not support the video tag.
-									</video>
+									<ol class="videos-slider">
+										<li>
+											<h3>Adding tickets</h3>
+											<div class="video-wrapper">
+												<video width="100%">
+													<source src="videos/adding-removing-from-ui.mp4" type="video/mp4">
+													Your browser does not support the video tag.
+												</video>
+											</div>
+										</li>
+										<li>
+											<h3>Follow sprint</h3>
+											<div class="video-wrapper">
+												<video width="100%">
+													<source src="videos/follow-unfollow-from-ui.mp4" type="video/mp4">
+													Your browser does not support the video tag.
+												</video>
+											</div>
+										</li>
+									</ol>
 								</div>
 							</section>
 
@@ -229,13 +242,60 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('.videos-slider').bxSlider({
+						controls: false,
+						auto: false
+					});
+
+					Video.init()
+				})
+
+				var Video = {
+
+					init: function() {
+						var $videos = $('video');
+						this.renderVideoPlayButton($videos)
+					},
+
+					renderVideoPlayButton: function ($videos) {
+						var t = this;
+						$videos.each(function(i, el) {
+							$el = $(el);
+							var $videoPlayButton = t.formatVideoPlayButton($el)
+							$el.addClass('has-media-controls-hidden')
+							$videoPlayButton.on('click', t.hideVideoPlayButton)
+						})
+
+					},
+
+					formatVideoPlayButton: function($video) {
+						var $svg = $('<svg class="video-overlay-play-button" viewBox="0 0 200 200" alt="Play video"><circle cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#fff"/><polygon points="70, 55 70, 145 145, 100" fill="#fff"/></svg>')
+						$video.parent().append($svg);
+						return $svg;
+					},
+
+					hideVideoPlayButton: function() {
+						var $video = $(this).prev();
+						$video.get(0).play()
+						$(this).addClass('is-hidden')
+						$video.removeClass('has-media-controls-hidden')
+						$video.attr('controls', 'controls')
+					}
+				}
+
+			</script>
 
 	</body>
 </html>

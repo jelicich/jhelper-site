@@ -88,11 +88,16 @@
 						.each(function() {
 
 							var	$this = $(this),
-								id = $this.attr('href'),
-								$section = $(id);
+								id = $this.attr('href');
+
+								// link to #
+							if(id.length <= 1)
+								return
+								
+							var $section = $(id);
 
 							// No section for this link? Bail.
-								if ($section.length < 1)
+								if ($section.length <= 1)
 									return;
 
 							// Scrollex.

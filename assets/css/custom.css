@@ -112,7 +112,45 @@ body.is-loading #main {
   text-align: left;
 }
 
+/*About*/
 .about-videos h3 {
   margin-top: 30px;
   margin-bottom: 20px;
+}
+
+/*Video*/
+.video-wrapper {
+    position: relative;
+}
+
+.video-wrapper > video {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.video-wrapper > video.has-media-controls-hidden::-webkit-media-controls {
+    display: none;
+}
+
+.video-overlay-play-button {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px calc(50% - 50px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 0.95;
+    cursor: pointer;
+    background-image: linear-gradient(transparent, #000);
+    transition: opacity 150ms;
+}
+
+.video-overlay-play-button:hover {
+    opacity: 1;
+}
+
+.video-overlay-play-button.is-hidden {
+    display: none;
 }
