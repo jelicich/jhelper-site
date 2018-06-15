@@ -33,8 +33,11 @@
 
 <script>
     export default {
+        name: 'contact',
         data: function () {
-            return {}
+            return {
+
+            }
         }
     }
 </script>
