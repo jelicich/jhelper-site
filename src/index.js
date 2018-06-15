@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
         el: '#wrapper',
         data: function () {
             return {
-
             }
         },
         components: {
