@@ -45,9 +45,15 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader'
-            }, {
+            },
+            {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=src/fonts/[name].[ext]'
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {}
             }
         ]
     }
