@@ -1,15 +1,17 @@
-import Contact from './component/contact/contact.vue'
-import Donate from './component/donate/donate.vue'
+import Vue from 'vue'
+
+import App from './component/app/app.vue'
 
 document.addEventListener('DOMContentLoaded', function () {
     new Vue({
         el: '#wrapper',
         data: function () {
-            return {}
+            return {
+
+            }
         },
         components: {
-            Donate,
-            Contact
+            App
         }
     })
 })

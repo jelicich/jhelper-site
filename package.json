@@ -4,8 +4,11 @@
   "description": "jHelper Chrome extension website",
   "main": "webpack.config.js",
   "scripts": {
+    "setup": "npm install & npm-recursive-install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch"
+    "build": "NODE_ENV=production webpack --config webpack/prod.config.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config webpack/dev.config.js --output-public-path=/",
+    "deploy": "npm run build && <some build script>"
   },
   "repository": {
     "type": "git",
@@ -25,16 +28,24 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.2",
     "prettier": "^1.12.1",
+    "recursive-install": "^1.3.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^1.0.1",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.6"
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
   },
   "dependencies": {
     "vuejs": "^3.0.1"

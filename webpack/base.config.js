@@ -1,28 +1,31 @@
-const path = require('path');
+const path = require('path')
 
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
-    mode: 'development',
     entry: {
         index: './src/index.js',
     },
-    output: {
-        path: path.resolve(__dirname, 'src'),
-        filename: 'webpack-bundle-[name].js'
-    },
-    devtool: 'src-map',
+
     plugins: [
-        new BrowserSyncPlugin({
-            // browse to http://localhost:3000/ during development,
-            // ./public directory is being served
-            host: 'localhost',
-            port: 3000,
-            server: {baseDir: ['src']}
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
         })
     ],
+
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    },
+
     module: {
         rules: [
+            {
+                test: /\.(png|jpeg|ttf|gif)$/,
+                loader: 'url-loader'
+            },
             {
                 test: /\.html$/,
                 use: 'html-loader'

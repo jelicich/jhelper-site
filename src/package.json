@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bxslider": "^4.2.13",
+    "jquery.scrollex": "^0.2.1",
+    "jquery.scrolly": "0.0.1",
     "vue": "^2.5.16"
   }
 }
