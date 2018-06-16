@@ -1,11 +1,13 @@
 export default {
     name: 'donate',
     data: function () {
-        return {}
+        return {
+
+        }
     },
     methods: {
         donateWithPaypal: function () {
-            // this.target.submit()
+            this.$refs['paypal-donate-form'].submit()
         }
     }
 }
