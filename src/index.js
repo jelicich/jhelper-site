@@ -1,4 +1,5 @@
-import Contact from './component/contact.vue'
+import Contact from './component/contact/contact.vue'
+import Donate from './component/donate/donate.vue'
 
 document.addEventListener('DOMContentLoaded', function () {
     new Vue({
@@ -8,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         components: {
-            Contact
+            Contact,
+            Donate
         }
     })
 })

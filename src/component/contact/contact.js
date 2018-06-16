@@ -1,4 +1,4 @@
-import Util from '../assets/js/fglib/util'
+import Util from '../../assets/js/fglib/util'
 
 export default {
     name: 'contact',
