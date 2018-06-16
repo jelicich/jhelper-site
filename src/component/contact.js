@@ -43,6 +43,8 @@ export default {
         },
 
         reset: function () {
+            this.validateName = this.validateEmail = false
+            
             // strings are immutable :-) in js
             this.name = this.email = this.message = ''
         }
