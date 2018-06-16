@@ -23,6 +23,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
                 test: /\.(png|jpeg|ttf|gif)$/,
                 loader: 'url-loader'
             },
@@ -49,13 +56,6 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                     'sass-loader'
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
                 ]
             }
         ]

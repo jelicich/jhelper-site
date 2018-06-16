@@ -146,6 +146,10 @@
 </template>
 
 <script>
+    import '../../assets/css/main.css'
+    import '../../assets/css/custom.css'
+    import '../../node_modules/bxslider/dist/jquery.bxslider.min.css'
+
     import App from './app.js'
 
     export default App

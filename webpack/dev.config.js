@@ -19,7 +19,5 @@ module.exports = merge(baseConfig, {
         // inline: true,
         contentBase: path.resolve(__dirname, '../src'),
         port: 3001
-    },
-
-    plugins: []
+    }
 })

@@ -5,12 +5,8 @@ import '../../node_modules/jquery.scrolly/jquery.scrolly.js'
 import '../../assets/js/skel.min.js'
 import '../../assets/js/util.js'
 import '../../assets/js/main.js'
+
 import '../../node_modules/vue/dist/vue.js'
-
-import '../../assets/css/main.css'
-import '../../assets/css/custom.css'
-import '../../node_modules/bxslider/dist/jquery.bxslider.css'
-
 
 import Contact from '../contact/contact.vue'
 import Donate from '../donate/donate.vue'
@@ -24,7 +20,7 @@ const Video = {
     renderVideoPlayButton: function ($videos) {
         var t = this;
         $videos.each(function (i, el) {
-            $el = $(el);
+            let $el = $(el);
             var $videoPlayButton = t.formatVideoPlayButton($el)
             $el.addClass('has-media-controls-hidden')
             $videoPlayButton.on('click', t.hideVideoPlayButton)
@@ -56,9 +52,8 @@ export default {
         Donate,
         Contact
     },
-    created: function () {
-        console.log('created')
 
+    mounted: function () {
         $('.videos-slider').bxSlider({
             controls: false,
             auto: false
