@@ -9,11 +9,11 @@
             <div class="row uniform">
                 <div class="6u 12u$(xsmall)">
                     <label for="contact-name">Name</label>
-                    <input v-bind:class="{'not-valid' : !isValidName() }" type="text" id="contact-name" name="name" value="" placeholder="Name" v-model="name">
+                    <input v-on:keyup="enableNameValidation" v-bind:class="{'not-valid' : !isValidName() }" type="text" id="contact-name" name="name" value="" placeholder="Name" v-model="name">
                 </div>
                 <div class="6u$ 12u$(xsmall)">
                     <label for="contact-email">e-mail*</label>
-                    <input type="email" id="contact-email" name="email" value="" placeholder="Email" v-model="email">
+                    <input v-on:keyup="enableEmailValidation" v-bind:class="{'not-valid' : !isValidEmail() }" type="email" id="contact-email" name="email" value="" placeholder="Email" v-model="email">
                 </div>
                 <div class="12u$">
                     <label for="contact-message">Message</label>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="12u$">
                     <ul class="actions">
-                        <li><input type="button" value="Send Message" class="special" v-on:click="submit" v-bind:disabled="!validate()"></li>
+                        <li><input type="button" value="Send Message" class="special" v-on:click="submit" v-bind:disabled="!isValid()"></li>
                         <li><input type="button" value="Reset" v-on:click="reset"></li>
                     </ul>
                 </div>
@@ -34,34 +34,8 @@
 <script>
     import './contact.css'
 
-    export default {
-        name: 'contact',
-        data: function () {
-            return {
-                name: '',
-                email: '',
-                message: ''
-            }
-        },
-        methods: {
-            isValidName: function() {
-                return this.name.length
-            },
+    import Contact from './contact.js'
 
-            validate: function() {
-                return this.name.length && this.email.length && this.message.length
-            },
-
-            submit: function () {
-                if (this.validate()) {
-                    // submit
-                }
-            },
-
-            reset: function () {
-
-            }
-        }
-    }
+    export default Contact
 </script>
 
