@@ -16,7 +16,8 @@ module.exports = {
 
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js'
+            vue: 'vue/dist/vue.js',
+            skel: 'skel-framework-npm/dist/skel.min.js'
         }
     },
 
