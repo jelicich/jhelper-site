@@ -1,5 +1,8 @@
 import Vue from 'vue'
 
+import Contact from './component/contact/contact.vue'
+import Donate from './component/donate/donate.vue'
+
 document.addEventListener('DOMContentLoaded', function () {
     new Vue({
         el: '#wrapper',

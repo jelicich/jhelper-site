@@ -13,7 +13,7 @@ module.exports = merge(baseConfig, {
     },
 
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../src'),
         filename: 'webpack-bundle-[name].js',
     },
 

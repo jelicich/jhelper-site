@@ -54,7 +54,7 @@
 </template>
 
 <script>
-    import Donate from './donate.js'
+    // import Donate from './donate.js'
 
     export default Donate
 </script>

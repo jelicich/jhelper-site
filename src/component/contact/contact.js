@@ -35,7 +35,7 @@ export default {
         },
 
         isValid: function () {
-            return this.isValidName() && this.isValidEmail() && this.message.length
+            return this.name.length && Util.isEmail(this.email) && this.message.length
         },
 
         submit: function () {
