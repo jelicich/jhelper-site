@@ -17,7 +17,7 @@ module.exports = merge(baseConfig, {
 
     devServer: {
         // inline: true,
-        contentBase: path.resolve(__dirname, '../dist'),
+        contentBase: path.resolve(__dirname, '../src'),
         port: 3001
     }
 })
